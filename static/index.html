@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groq Chat Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-header">
+            <h1>🤖 Groq Chat Assistant</h1>
+            <div class="header-actions">
+                <span id="status" class="status connecting">Connecting...</span>
+                <button id="clearBtn" class="clear-btn" title="Clear conversation">
+                    🗑️ Clear
+                </button>
+            </div>
+        </div>
+
+        <div id="chatContainer" class="chat-container">
+            <div class="message-wrapper system-wrapper">
+                <div class="message system-message">
+                    <p>Initializing assistant...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <textarea 
+                id="messageInput" 
+                placeholder="Type your message here..." 
+                rows="1"
+                disabled
+            ></textarea>
+            <button id="sendBtn" class="send-btn" disabled>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 8L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
