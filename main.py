@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import os
 import asyncio
 from typing import Dict
-
+import uvicorn
 load_dotenv()
 
 app = FastAPI(title="Groq Chat Assistant")
@@ -140,3 +140,7 @@ async def health_check():
         "model_loaded": llm is not None,
         "active_sessions": len(sessions)
     }
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # use Render’s assigned port
+    uvicorn.run(app, host="0.0.0.0", port=port)
